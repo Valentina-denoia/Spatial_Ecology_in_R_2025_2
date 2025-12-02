@@ -1,0 +1,58 @@
+#this is an example of code for the exam
+
+# How to import external data in R
+
+#To import data into R, the working directory must be set. To do that, we need to know the path of the working directory in "get info" of the proprietes
+
+#The packages needed in this script are the following
+
+''' r
+library(terra) # managing raster and vector data 
+library (imageR) #
+
+#the # next to the function will appear in Markdown
+
+#we need to put the tilde symbol (~) and the slash /
+setwd("~/Dowlads/")
+
+#Once I gave him the working directory, to check it I need to put:
+getwd()
+
+group <- rast ("image.JPG")
+# If you receive errors, check that the path is correct and the image is inside the folder you selected
+
+#to get info on the image, digit its name by:
+
+group
+
+#the double ## is used for the subtitles in the preview part
+
+# to plot the image, we will use the RB scheme: 
+#layer 1 = Red, layer 2 = greeen wavelenght, layer 3  blue wavelenght 
+
+im.plotRGB(group, r=1, g=2, b=3) 
+
+#at this point, the image will be flipped down, so to flip it up, I can solve the problem by using the flip() function
+
+group <- flip (group)
+
+The output plot can be exported by the png () function 
+''r
+png(2group_foto")
+im.plotRGB(group, r=1, g=2, b=3) 
+dev.off ()
+
+#to import the picture in Markdown, I can just bring it with the mouse
+
+# now Let's invert the bands to create a false color image (without the natural color). This can be used to find an object or something that is not visible with natural colors:
+png("groupo_photo_false")
+
+
+
+Another way to create Markdown is to put my code "you should develop a Markdown based on the following R code, which is needed for the exam.
+
+```r
+png("group_photo_false.png")
+im.plotRGB(group, r=2, g=1, b=3)
+dev.off()
+```
